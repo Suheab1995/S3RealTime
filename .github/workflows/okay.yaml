@@ -4,15 +4,17 @@ on:
   push:
     branches:
       - main  # Adjust this to your deployment branch
+  workflow_dispatch:
+      
 
 jobs:
   process-images:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: us-east-1  # Change this to your AWS region
+      AWS_REGION: ap-south-1  # Change this to your AWS region
       LAMBDA_FUNCTION_NAME: processImagesLambda  # Replace with your Lambda function name
-      CLOUDFRONT_DISTRIBUTION_ID: your-cloudfront-distribution-id  # Replace with your CloudFront distribution ID
+      CLOUDFRONT_DISTRIBUTION_ID: EDXG1PIY342YH  # Replace with your CloudFront distribution ID
 
     steps:
       - name: Checkout Repository
